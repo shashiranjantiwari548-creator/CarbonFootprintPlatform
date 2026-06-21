@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+  
+  /* Color Palette (Forest & Emerald Dark Tech Theme) */
+  --bg-primary: #0b0f0d;
+  --bg-secondary: #121915;
+  --bg-card: rgba(20, 30, 26, 0.7);
+  --border-color: rgba(16, 185, 129, 0.15);
+  --border-hover: rgba(16, 185, 129, 0.3);
+  
+  --text-primary: #f2faf6;
+  --text-secondary: #90a49b;
+  --text-muted: #5b7066;
+  
+  --primary: #10b981;
+  --primary-hover: #34d399;
+  --primary-rgb: 16, 185, 129;
+  
+  --secondary: #3b82f6;
+  --accent: #f59e0b;
+  --danger: #f87171;
+  --success: #10b981;
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.6);
+  
+  --glass-bg: rgba(18, 25, 21, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.04);
+  --glass-glow: rgba(16, 185, 129, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Background ambient glow */
+body::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 40%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 50%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c2a23;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3d33;
+}
+
+/* Smooth transitions */
+a, button, input, select, textarea {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
